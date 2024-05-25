@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入静态文件网页 -->
+	<link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+	{{template "page_header.html" .}}
+	<img src="/static/images/WenjiCai.jpg" alt="">
+	<!-- <h2>首页</h2> -->
+	<!-- 后台的数据可以通过.来渲染 --> 
+	<h2>{{.title}}</h2>
+	<!--定义变量,br标签是换行-->
+	{{$t:=.title}}
+	<br>
+	<h4>
+		{{$t}}
+	</h4>
+	<!-- 循环遍历数据 --> 
+	<ul>
+		{{range $key,$value:=.hobby}}
+		<li>{{$key}}---{{$value}}</li>
+		{{end}}
+	</ul>
+
+	<br>
+	<ul>
+		{{range $key,$value:=.newsList}}
+			<li>{{$key}}---{{$value.Title}}---{{$value.Content}}</li>
+		{{end}}
+	</ul>
+
+	<!-- with解构结构体 -->
+	<p>{{.news.Title}}</p>
+	<p>{{.news.Content}}</p>
+	<br>
+	{{with .news}}
+	{{.Title}}
+	{{.Content}}
+	{{end}}
+	<br>
+	<!-- 预定义函数 -->
+	{{len .title}}
+	<br>
+	<br>
+	<!-- 自定义模板函数 -->
+	{{Println .title .msg}}	
+	{{template "page_footer.html" .}}
+</body>
+</html>

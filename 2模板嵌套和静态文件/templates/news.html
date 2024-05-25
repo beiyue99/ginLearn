@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入静态文件网页 -->
+	<link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+	{{template "page_header.html" .}}
+	<h2>{{.title}}</h2>
+	<p>
+	{{.news.Title}}
+	</p>
+	<p>
+	{{.news.Content}}
+	</p>
+	{{template "page_footer.html" .}}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入静态文件网页 -->
+	<link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+	<form action="/doAddUser" method="post">
+		用户名:<input type="text" name="username" /> <br> <br>
+		密码:<input type="password" name="password" /><br><br>
+		<input type="submit" value="提交">
+	<!-- 点提交之后，会以post的形式，给doAddUser传值	 -->
+	</form>
+</body>
+</html>
